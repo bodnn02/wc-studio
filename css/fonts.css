@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter-VariableFont_slnt,wght.ttf') format('truetype');
+    font-weight: 400 900;
+    font-style: oblique 0deg 10deg;
+    font-stretch: ultra-condensed;
+}

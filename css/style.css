@@ -1,0 +1,471 @@
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+
+    font-family: 'Inter';
+}
+
+.form-page {
+    animation: backgroundAnim infinite 10s;
+}
+@keyframes backgroundAnim {
+    0% {
+        background-color: #F4FEFF;
+    }
+    25% {
+        background-color: #FFF4F4;
+    }
+    50% {
+        background-color: #FFFCF4;
+    }
+    75% {
+        background-color: #F4FFF7;
+    }
+    100% {
+        background-color: #F4FEFF;
+    }
+}
+.app-form {
+    margin: 85px 40px 56px 40px;
+    padding: 40px 40px 40px 85px;
+
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background-color: #FFFFFF;
+    box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
+}
+.app-form__header {
+    margin-bottom: 80px;
+}
+.app-form__footer {
+    margin-top: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.app-form__footer .button + .button {
+    margin-left: 16px;
+}
+.app-form__h1 {
+    font-weight: 500;
+    text-align: center;
+    font-size: 48px;
+    line-height: 58px;
+
+    color: #0B0B0B;
+}
+.app-form .form {
+    min-height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.form-section {
+    position: relative;
+}
+.form-section + .form-section {
+    margin-top: 56px;
+}
+.form-section::before {
+    content: attr(data-index);
+
+    position: absolute;
+    top: 3px;
+    left: -56px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #DFDFDF;
+}
+.form-section__header {
+    margin-bottom: 24px;
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.form-section__h2 {
+    margin-bottom: 24px;
+
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #0B0B0B;
+}
+.form-section__p {
+    width: 100%;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #7D7D7D;
+}
+.form-section__h2 + .form-section__p {
+    margin-top: 8px;
+}
+.form-section__header .form-section__h2 {
+    margin-bottom: 0;
+}
+.input-wrapper + .input-wrapper {
+    margin-top: 16px;
+}
+.label {
+    display: block;
+    margin-left: 16px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #0B0B0B;
+}
+.label + * {
+    margin-top: 8px;
+}
+.select {
+    appearance: none;
+    padding: 14.5px 16px;
+    padding-right: 40px;
+
+    min-width: 476px;
+    max-width: 476px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #7D7D7D;
+
+    background: #FFFFFF;
+    background-image: url(../img/chevron-down.svg);
+    background-repeat: no-repeat;
+    background-position: calc(100% - 16px) center;
+    border: 1px solid #0B0B0B;
+    border-radius: 8px;
+
+    outline: none;
+}
+.flex-wrapper {
+    display: flex;
+    align-items: center;
+}
+.button {
+    padding: 15.5px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    
+    color: #060615;
+
+    background-color: transparent;
+    border: 1px solid #060615;
+    border-radius: 8px;
+
+    transition: linear .2s;
+    cursor: pointer;
+}
+.button:hover {
+    background: #70C7FF;
+    color: #FFFFFF;
+    border-color: transparent;
+    box-shadow: 0px 8px 24px rgba(112, 199, 255, 0.55);
+}
+.flex-wrapper .button + .button {
+    margin-left: 16px;
+}
+.footer {
+    padding: 48px;
+    background-color: #060615;
+}
+.footer-btn {
+    padding: 15.5px 30px;
+    display: block;
+    margin: 0 auto;
+
+    background: #FFFFFF;
+    opacity: 0.1;
+    border: 1px solid #0B0B0B;
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+.input {
+    padding: 14.5px 16px;
+    width: calc(100% - 32px);
+    max-width: 442px;
+
+    background: #FFFFFF;
+    border: 1px solid #0B0B0B;
+    border-radius: 8px;
+    
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    color:#0B0B0B;
+    outline: none;
+}
+.input::placeholder {
+    color: #7D7D7D;
+}
+.input.error {
+    border-color: #CE6464;
+    color: #CE6464;
+}
+.radio-wrapper {
+    display: flex;
+    align-items: center;
+}
+.radio-wrapper + .input-wrapper, .radio-wrapper + .radio-wrapper {
+    margin-top: 16px;
+}
+.input-wrapper + .radio-wrapper {
+    margin-top: 24px;
+}
+.radio, .checkbox {
+    margin: 0;
+    position: relative;
+    appearance: none;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 24px;
+    height: 24px;
+}
+.radio::before, .checkbox::before {
+    content: "";
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: calc(100% - 2px);
+    width: calc(100% - 2px);
+
+    background: #FFFFFF;
+    border: 1px solid #060615;
+    border-radius: 50%;
+}
+
+.radio:checked::after, .checkbox:checked::after {
+    content: "";
+
+    top: 0;
+    left: 50%;
+    display: block;
+    width: 50%;
+    height: 50%;
+
+    background: #060615;
+    border-radius: 50%;
+
+    z-index: 2;
+    transition: linear .2s;
+}
+.radio + .label, .checkbox + .label {
+    display: inline-block;
+
+    margin-left: 8px;
+}
+
+.hint {
+    position: relative;
+
+    cursor: pointer;
+}
+.hint__details {
+    padding: 8px 16px;
+    width: 375px;
+    display: none;
+
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: -187px;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+
+    color: #FFFFFF;
+
+    background: rgba(11, 11, 11, 0.5);
+    border-radius: 4px;
+
+    transition: opacity linear .2s;
+}
+.hint:hover .hint__details {
+    display: block;
+}
+* + .hint {
+    margin-left: 8px;
+}
+.textarea {
+    padding: 14.5px 16px;
+    width: calc(100% - 32px);
+    max-width: 442px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #0B0B0B;
+
+    background: #FFFFFF;
+    border: 1px solid #0B0B0B;
+    border-radius: 8px;
+
+    resize: vertical;
+}
+.textarea::placeholder {
+    color: #7D7D7D;
+}
+.fileinput {
+    padding: 14.5px 16px;
+    width: calc(100% - 32px);
+    max-width: 442px;
+
+    display: flex;
+    align-items: center;
+
+    background: #FFFFFF;
+    border: 1px solid #0B0B0B;
+    border-radius: 8px;
+}
+.fileinput + .input-wrapper {
+    margin-top: 16px;
+}
+.fileinput input[type="file"] {
+    width: 0;
+    visibility: hidden;
+    position: relative;
+}
+.fileinput input[type="file"] + label {
+    min-width: 24px;
+    height: 24px;
+
+    background-image: url(../img/upload.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.fileinput input[type="text"] {
+    width: 100%;
+
+    border: none;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #7D7D7D;
+    outline: none;
+}
+.radio-wrapper + .fileinput {
+    margin-top: 16px;
+}
+.fileinput + .radio-wrapper {
+    margin-top: 16px;
+}
+.add-btn {
+    padding: 15.5px 32px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+
+    color: #FFFFFF;
+    background-color: #060615;
+    border: none;
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+* + .add-btn {
+    margin-top: 24px;
+}
+
+@media (max-width: 800px) {
+    .app-form {
+        margin: 16px 0;
+    }
+    .app-form__header {
+        margin-bottom: 48px;
+    }
+    .app-form__h1 {
+        font-size: 24px;
+        line-height: 29px;
+    }
+    .app-form {
+        padding: 24px 11px;
+    }
+    .form-section::before {
+        top: 0;
+        left: 0;
+
+        font-size: 14px;
+        line-height: 17px;
+    }
+    .form-section {
+        padding-top: 23px;
+    }
+    .form-section__h2 {
+        font-size: 14px;
+        line-height: 17px;
+    }
+    .label {
+        font-size: 14px;
+        line-height: 17px;
+    }
+    .form-section + .form-section {
+        margin-top: 34px;
+    }
+    .button {
+        font-size: 14px;
+        line-height: 17px;
+    }
+    .select {
+        padding: 12.5px 16px;
+        min-width: 100%;
+        max-width: unset;
+
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .input {
+        padding: 12.5px 16px;
+
+        width: calc(100% - 32px);
+        max-width: unset;
+
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .fileinput {
+        padding: 12.5px 16px;
+
+        width: calc(100% - 32px);
+        max-width: unset;
+    }
+    .fileinput input[type="text"] {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .add-btn {
+        width: 100%;
+    }
+}
